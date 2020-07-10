@@ -5,13 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/prod/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "yarn run dev:development",
-    "dev:development": "ENV=development webpack --config webpack.dev.js ./app/index.js",
-    "dev:staging": "ENV=staging webpack --config webpack.dev.js ./app/index.js",
-    "dev:production": "ENV=production webpack --config webpack.dev.js ./app/index.js",
-    "build": "webpack --config webpack.prod.js ./app/index.js",
-    "migrate": "knex migrate:latest"
+    "dev": "ENV=development webpack --config webpack.dev.js ./app/index.js",
+    "build": "webpack --config webpack.prod.js ./app/index.js"
   },
   "keywords": [],
   "author": "",
