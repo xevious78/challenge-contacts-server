@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-class _Database {
+class FakeDatabase {
     constructor() {
         this._contacts = {};
     }
@@ -35,6 +35,6 @@ class _Database {
 
 }
 
-const Database = new _Database();
+const Database = new FakeDatabase();
 
 export default Database;
