@@ -14,7 +14,6 @@ import path from "path";
 import CorsMiddleware from "~/middleware/cors";
 // Routes
 import routes from "~/routes";
-import logging from "./middleware/logging";
 
 let app;
 let server;
@@ -36,8 +35,6 @@ const init = async () => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.use(CorsMiddleware.fromUI);
-
-  logging(app);
 
   /**********************/
   /* */
