@@ -33,7 +33,7 @@ router.get("/:contactId", async (req, res) => {
 router.post("/", async (req, res) => {
   const { contactInfos } = req.body;
 
-  const contact = await Database.createContact(contact, contactInfos);
+  const contact = await Database.createContact(contactInfos);
 
   return res.send({ contact: contact });
 });
@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
 /* Delete contact */
 router.delete("/:contactId", async (req, res) => {
   const { contactId } = req.params;
-  
+
   await Database.deleteContact(contactId);
 
   return res.send("ok");
