@@ -3,8 +3,12 @@ import { v4 as uuid } from "uuid";
 class FakeDatabase {
   constructor() {
     this._contacts = {};
+    this._images = {};
   }
 
+  ///////////////////////////////////////////
+  // Contacts
+  ///////////////////////////////////////////
   async getContacts() {
     return Object.values(this._contacts).sort();
   }
@@ -32,6 +36,20 @@ class FakeDatabase {
     this._contacts[contactId] = { ...contactInfos, id: contactId };
 
     return this._contacts[contactId];
+  }
+
+  ///////////////////////////////////////////
+  // Images
+  ///////////////////////////////////////////
+
+  async createImage(file) {
+    const imageId = uuid();
+    this._images[imageId] = file;
+    return imageId;
+  }
+
+  async getImage(imageId) {
+    return this._images[imageId];
   }
 }
 
