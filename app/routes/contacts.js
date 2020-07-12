@@ -52,10 +52,6 @@ router.put("/:contactId", async (req, res) => {
   const { contactId } = req.params;
   const { contactInfos } = req.body;
 
-  if (contact.id != contactId) {
-    return res.sendStatus(400);
-  }
-
   const contact = await Database.updateContact(contactId, contactInfos);
   return res.send({ contact: contact });
 });
