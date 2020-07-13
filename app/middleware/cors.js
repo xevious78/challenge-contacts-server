@@ -1,20 +1,14 @@
 import cors from "cors";
+import config from "../config";
 
 const CorsMiddleware = {};
 
 let whiteListUI;
 
 if (process.env.NODE_ENV === "production") {
-  whiteListUI = ["http://localhost:3701"];
+  whiteListUI = [config.clientHost];
 } else if (process.env.NODE_ENV === "development") {
-  whiteListUI = [
-    "http://localhost:3501",
-    "http://127.0.0.1:3501",
-    "http://192.168.1.27:3701",
-    "http://192.168.1.47:3501",
-    "http://localhost:3701",
-
-  ];
+  whiteListUI = ["http://localhost:3000", config.clientHost];
 }
 
 const isDev = process.env.NODE_ENV === "development";
@@ -32,7 +26,7 @@ const optionsUI = {
     } else {
       cb("Not allowed by CORS");
     }
-  }
+  },
 };
 
 CorsMiddleware.base = (...args) => cors(...args);

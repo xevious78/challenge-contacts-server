@@ -2,7 +2,7 @@
 /* IMPORT */
 /**********************/
 // Config
-import config from "~/config";
+import config from "./config";
 
 // Server
 import http from "http";
@@ -11,10 +11,9 @@ import bodyParser from "body-parser";
 
 // Utils
 import path from "path";
-import CorsMiddleware from "~/middleware/cors";
+import CorsMiddleware from "./middleware/cors";
 // Routes
-import routes from "~/routes";
-import logging from "./middleware/logging";
+import routes from "./routes";
 
 let app;
 let server;
@@ -37,11 +36,10 @@ const init = async () => {
 
   app.use(CorsMiddleware.fromUI);
 
-  logging(app);
-
   /**********************/
   /* */
   /**********************/
+  app.use((req, res, next) => setTimeout(next, config.waitMsec));
   app.use(path.join(config.apiPrefix, "."), routes);
 
   /**********************/
