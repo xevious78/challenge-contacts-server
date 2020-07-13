@@ -1,9 +1,21 @@
 import { v4 as uuid } from "uuid";
+import faker from "faker";
 
 class FakeDatabase {
   constructor() {
     this._contacts = {};
     this._images = {};
+
+    for (var i = 0; i < 200; ++i) {
+      this.createContact({
+        name: faker.name.findName(),
+        jobTitle: faker.company.companyName(),
+        address: faker.address.streetAddress(),
+        email: faker.internet.email(),
+
+        phoneNumbers: ["+33102030405"],
+      });
+    }
   }
 
   ///////////////////////////////////////////

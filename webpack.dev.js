@@ -36,7 +36,7 @@ module.exports = {
     //   filename: "./dev/[name].js.map",
     // }),
     new NodemonPlugin({
-      nodeArgs: ["--inspect=37020"],
+      nodeArgs: ["--inspect=37021"],
     })
   ]
 };
