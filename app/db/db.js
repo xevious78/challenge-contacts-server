@@ -8,7 +8,7 @@ class FakeDatabase {
     this._contacts = {};
     this._images = {};
 
-    this._images["picture1"] = { path: "uploads/cat1.jpg" };
+    this._images["picture1"] = { path: "cat1.jpg" };
 
     for (var i = 0; i < config.nbFakeContacts; ++i) {
       this.createContact({

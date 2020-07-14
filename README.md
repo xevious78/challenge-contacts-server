@@ -12,6 +12,12 @@ First, install the dependencies with `yarn` or `npm`.
 $ yarn # or npm i
 ```
 
+Make sure the `uploads` directory exists. This is the destination of the contacts pictures.
+
+```
+$ mkdir uploads
+```
+
 Then, set the client's host URL in the `.env` file (for CORS).
 
 ```
@@ -33,6 +39,7 @@ $ yarn build
 ```
 
 Then start the server using `node`
+
 ```
 $ node ./dist/prod/main.js
 ```
