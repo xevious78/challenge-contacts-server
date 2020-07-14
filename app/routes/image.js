@@ -7,7 +7,6 @@ export default router;
 
 router.post("/", upload.single("image"), async (req, res) => {
   const file = req.file;
-  console.log(file);
   if (!file) {
     return res.status(400).send();
   }
