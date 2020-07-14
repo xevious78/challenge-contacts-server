@@ -26,6 +26,17 @@ Finally, start the server (on port 3000 by default).
 $ yarn dev
 ```
 
+To run the server in production mode, run this command to build the backend:
+
+```
+$ yarn build
+```
+
+Then start the server using `node`
+```
+$ node ./dist/prod/main.js
+```
+
 ## `.env`
 
 | Name               | Type   | Description                                                                        |
